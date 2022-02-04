@@ -1,2 +1,2 @@
 # cen3031_proj
-intro to software engineering project
+Intro to Software Engineering project
