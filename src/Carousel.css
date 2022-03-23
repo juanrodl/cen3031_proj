@@ -1,0 +1,32 @@
+:root {
+    --primary: #E69597;
+    --secondary: #CDD5D1;
+    --tertiary:#FF7477;
+    --quaternary: #9CF6F6;
+    --quint: #0D3B66;
+    --sext: #B5D6D6;
+  }
+.Carousel {
+    position: relative;
+    flex-direction: row;
+    display: flex;
+    height:80vh;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.card.active {
+    border-radius: 1rem;
+    background-color:var(--primary);
+    opacity:1;
+    transition-duration: 1s;
+    transform: scale(1.08);
+}
+.card.inactive {
+    border-radius: 1rem;
+    background-color:var(--primary);
+    opacity: 0;
+    transition-duration:1s ease;
+}
