@@ -1,9 +1,13 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import CustomCard from './CustomCard';
+import Carousel from './Carousel';
+import { data } from '../data/data'
 
 function TestPage () {
     return (
-        <p>based</p>
+        <div className = "enclosure">
+            <Carousel cards={data}></Carousel>
+        </div>
     );
 }
 

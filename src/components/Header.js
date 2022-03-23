@@ -4,29 +4,25 @@ import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { BrowserRouter as Router,Routes as Switch,Route,Link} from "react-router-dom";
 function Header () {
     return (
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-            <div class = 'container-fluid'>
-                <a class = "navbar-brand" href=''> MeetYourMajor</a>
-                <div class = "navbar-nav">
-                      <ul class="navbar-nav">
-                        <li class="nav-item">
-                          <a class="nav-link" aria-current="page" href="#">
-                            <Link to='/home'>Home</Link>
+        <nav className="navbar navbar-expand-sm bg-primary-custom navbar-secondary-custom">
+            <div className = 'container-fluid p-2'>
+                <Link to="/home" className = "navbar-brand-custom nav-link-custom display-6">MeetYourMajor</Link>
+                <div className = "navbar-nav">
+                      <ul className="navbar-nav float-right">
+                        
+                        <li className="nav-item">
+                          <a className="nav-link nav-link-custom" href="#">
+                          <Link to='/about' className = "nav-link-custom">About</Link>
                           </a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">
-                          <Link to='/test'>Test</Link>
+                        <li className="nav-item">
+                          <a className="nav-link nav-link-custom" href="#">
+                          <Link to='/test' className = "nav-link-custom">Take Assessment</Link>
                           </a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">
-                          <Link to='/about'>About</Link>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                              <FontAwesomeIcon icon={faUser} />
+                        <li className="nav-item">
+                            <a className="nav-link nav-scale nav-link-custom" href="#">
+                            <Link to='/profilePage' className = "nav-link-custom"><FontAwesomeIcon icon={faUser} /></Link>
                             </a>
                         </li>
                       </ul>
