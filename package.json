@@ -1,27 +1,10 @@
 {
   "name": "cen3031_proj",
   "version": "0.2.0",
-  "homepage": "https://juanrodl.github.io/cen3031_proj",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.1.0",
-    "@fortawesome/free-regular-svg-icons": "^6.1.0",
-    "@fortawesome/free-solid-svg-icons": "^6.1.0",
-    "@fortawesome/react-fontawesome": "^0.1.18",
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
-    "react": "^17.0.2",
-    "react-bootstrap": "^2.2.1",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^6.2.2",
-    "react-scripts": "5.0.0",
-    "react-transition-group": "^4.4.2",
-    "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -46,6 +29,19 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.0",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "eslint-config-react-app": "^7.0.0",
+    "react": "^17.0.2",
+    "react-bootstrap": "^2.2.1",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.2",
+    "react-scripts": "5.0.0",
+    "react-transition-group": "^4.4.2",
+    "web-vitals": "^2.1.4"
   }
 }

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import CustomCardEnd from './CustomCardEnd';
 import { data } from '../data/data';
 import CustomCard from './CustomCard';
 import '../Carousel.css';
@@ -9,11 +10,11 @@ const Carousel = ({cards}) => {
     const length = cards.length;
 
     const nextSlide = () => {
-        setCurrent(current === length - 1 ? 0 : current + 1);
+        setCurrent(current + 1);
     };
 
     const prevSlide = () => {
-        setCurrent(current === 0 ? length -1 : current -1);
+        setCurrent(current === 0 ? current : current -1);
     };
     console.log(current);
 
@@ -26,7 +27,8 @@ const Carousel = ({cards}) => {
                 {cards.map((question, index) => {
                     return ( 
                         <div className = {index === current ? 'card active' : 'card'} key={index}>
-                            {index === current && (<CustomCard question = {question.question} points={question.points} stateChanger1 = {prevSlide} stateChanger2 = {nextSlide}></CustomCard>)}
+                            {index === current && index === length-1 ? <CustomCardEnd question = {"Would you like to submit your answers?"} stateChanger1 = {prevSlide}></CustomCardEnd>
+                            : index === current && (<CustomCard question = {question.question} points={question.points} stateChanger1 = {prevSlide} stateChanger2 = {nextSlide}></CustomCard>)}
                         </div>
                 )})}     
             </div>

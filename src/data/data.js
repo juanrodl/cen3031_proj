@@ -8,11 +8,14 @@ export const data = [
         points: 0
     },
     {
-        question: "Have you ever been with anybody this rich?",
+        question: "Would you say you are Carmen Winstead",
         points: 0
     },
     {
-        question: "Have you ever been with anybody with green eyes like this?",
+        question: "Would you say you are goated with the sauce?",
         points: 0
+    },
+    {
+        filler: "filler"
     }
 ]
