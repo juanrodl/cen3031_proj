@@ -1,0 +1,26 @@
+.navbar-secondary-custom {
+    background-color:var(--tertiary);
+  }
+  .bg-primary-custom {
+    color: var(--secondary);
+  }
+  .navbar-brand-custom {
+    font-family:'Lexend', sans-serif;
+  }
+  a.nav-link-custom{
+    color:white;
+    text-decoration: none;
+    transition: 0.5s;
+  }
+  a.nav-link-custom:hover{
+    transform:scale(1.05); 
+    border-radius: 1rem;
+  }
+  a.nav-scale {
+    transition:  0.5s;
+  }
+  a.nav-scale:hover {
+    transform: scale(1.2);
+    background-color:black;
+    border-radius:25%;
+  }

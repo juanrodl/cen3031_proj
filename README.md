@@ -1,5 +1,5 @@
 # MeetYourMajor
-Intro to Software Engineering project
+### Intro to Software Engineering project
 **Description**: MeetYourMajor is a simple, lightweight web application through which High School 
 and College Students alike can take a short assessment that determines their career or major of best-fit.
 This app intends to assist students who feel unsure of what major they should pursue during their time in college,

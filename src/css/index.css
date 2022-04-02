@@ -1,0 +1,119 @@
+:root {
+  --primary: #E69597;
+  --secondary: #CDD5D1;
+  --tertiary:#FF7477;
+  --quaternary: #9CF6F6;
+  --quint: #0D3B66;
+  --sext: #B5D6D6;
+  --sept: #ad4244;
+}
+
+body *{
+  position:relative;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--primary);
+  color:var(--secondary);
+
+}
+body>div#root {
+  height:100vh;
+  overflow: hidden;
+}
+.App {
+  display:flex;
+  flex-flow:column;
+  height:100vh;
+  width:100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.navbar-dark {
+  color: ivory;
+  font-size: 1rem;
+}
+.navbar-dark .nav-item .nav-link{
+  color: lightgray;
+}
+.navbar-dark .navbar-brand {
+  font-size: 1.5rem;
+}
+.btn-custom {
+  background-color: #292b2c;
+  width:50%;
+  transition: 1s;
+  color:white;
+  text-decoration: none;
+}
+.btn-custom:hover {
+    background-color: blue;
+    transform:scale(1.05);
+    color:white;
+}
+
+
+.btn-link-custom {
+  color:white;
+  text-decoration: none;
+  transition: 0.5s;
+  font-size:1.1rem;
+}
+.btn-link-custom:hover {
+  color:white;
+}
+
+a {
+  text-decoration: none;
+  color:white;
+}
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+#card-1:hover {
+  background-color: #5bbaba;
+  color: white;
+  transform: scale(1.2);
+}
+#card-2:hover {
+  background-color: blue;
+  color: white;
+  transform: scale(1.2);
+}
+#card-3:hover {
+  background-color: green;
+  color: white;
+  transform: scale(1.2);
+}
+
+.custom-display {
+  font-family: 'Lexend', sans-serif;
+  font-weight:bolder;
+  color: white;
+  font-size: min(10vw, 150px);
+}
+.custom-lead-lesser {
+  font-size:1.1rem;
+  padding:1rem;
+  margin:0;
+}
+
+a.link-custom {
+  color:white;
+  transition: 0.3s;
+  text-decoration: underline;
+}
+a.link-custom:hover {
+  color:blue;
+}

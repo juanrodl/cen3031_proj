@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { BrowserRouter as Router,Routes as Switch,Route,Link} from "react-router-dom";
+import "../css/Header.css";
 function Header () {
     return (
         <nav className="navbar navbar-expand-sm bg-primary-custom navbar-secondary-custom">

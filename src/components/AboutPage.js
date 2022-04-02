@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-
+import "../css/AboutPage.css";
 function AboutPage () {
     return (
         <div className = "enclosure">
             <div className = "about-header page-header text-center container">
-               <h1 className = "display-3">Welcome to Meet Your Major!</h1>
+               <h1 className = "display-3 custom-display-3">Welcome to Meet Your Major!</h1>
                 <hr className="about"></hr>
             </div>
             <div className = "container d-flex justify-content-between space-between align-items-center p-4">

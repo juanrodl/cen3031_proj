@@ -16,14 +16,19 @@
     align-items: center;
     width: 100%;
 }
+.cardc {
+    opacity: 0;
+    transform: translateY(100%);
+}
 
-.card.active {
+.cardc.active {
     border-radius: 1rem;
     background-color:var(--primary);
     opacity:1;
-    animation: 0.5s ease-out 0s 1 slideCardFromBottom;
+    transform: translateY(0);
+    transition: 1s;
 }
-.card.inactive {
+.cardc.inactive {
     border-radius: 1rem;
     background-color:var(--primary);
     opacity: 0;
@@ -37,4 +42,15 @@
     100% {
         transform: translateX(0);
     }
+}
+
+.carousel-chevron {
+    width:2vw;
+    height:20vh;
+    padding:2vw;
+    transition: 1s;
+}
+.carousel-chevron:hover {
+    transform: scale(1.2);
+    color:white;
 }

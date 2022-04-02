@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import TestButton from './TestButton';
+import "../css/HomeContent.css"
 function HomeContent () {
     return (
         <div className='HomeContent text-center w-100'>
