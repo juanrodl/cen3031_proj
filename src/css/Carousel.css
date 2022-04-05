@@ -1,0 +1,56 @@
+:root {
+    --primary: #E69597;
+    --secondary: #CDD5D1;
+    --tertiary:#FF7477;
+    --quaternary: #9CF6F6;
+    --quint: #0D3B66;
+    --sext: #B5D6D6;
+  }
+.Carousel {
+    position: relative;
+    flex-direction: row;
+    display: flex;
+    height:80vh;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.cardc {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.cardc.active {
+    border-radius: 1rem;
+    background-color:var(--primary);
+    opacity:1;
+    transform: translateY(0);
+    transition: 1s;
+}
+.cardc.inactive {
+    border-radius: 1rem;
+    background-color:var(--primary);
+    opacity: 0;
+    transition-duration:1s ease;
+}
+
+@keyframes slideCardFromBottom {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.carousel-chevron {
+    width:2vw;
+    height:20vh;
+    padding:2vw;
+    transition: 1s;
+}
+.carousel-chevron:hover {
+    transform: scale(1.2);
+    color:white;
+}

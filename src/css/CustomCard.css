@@ -1,0 +1,106 @@
+.custom-card {
+
+    margin:  auto;
+    border: 0.3rem solid black;
+    border-radius: 1rem;
+    max-width:100vw;
+  
+    text-align: center;
+    justify-content: center;
+    padding: 2rem;
+    color:white;
+    background-color: var(--tertiary);
+  }
+  .question-custom {
+    font-size:2.3rem;
+  }
+  span.bigdot-checked {
+    background-color:red;
+  }
+  span.bigdot:hover {
+    background-color: red;
+  }
+  .custom-card-line {
+    border: 0.1rem solid black;
+    opacity: 1;
+  }
+  .coolCircles {
+    padding-bottom:1%;
+    display: flex;
+    vertical-align:middle;
+    height:20vh;
+  }
+  .left-balls, .right-balls {
+    padding-left:5rem;
+    padding-right:5rem;
+  }
+  .agree-label, .disagree-label {
+    font-size: 1.5rem;
+    font-family:'Lexend', sans-serif;
+    font-weight: bold;
+  }
+  .bigdot {
+    width:100%;
+    height:100%;
+    border-radius: 100%;
+    background-color: var(--primary);
+    border: 0.3vw solid black;
+    transition:0.5s;
+  }
+  .bigdot-neutral {
+    width:5vw;
+    height:5vw;
+    padding:10px;
+  }
+  .bigdot-agree {
+    width: 6vw;
+    height: 6vw;
+    padding:10px;
+  }
+  .bigdot-fullyagree {
+    width:7vw;
+    height:7vw;
+    padding:10px;
+  }
+  .bigdot-extrafullyagree {
+    width:8vw;
+    height:8vw;
+    padding:10px;
+  }
+  .bigdot-disagree {
+    width:6vw;
+    height:6vw;
+    padding:10px;
+  
+  }
+  .bigdot-fullydisagree {
+    width:7vw;
+    height:7vw;
+    padding:10px;
+  }
+  .bigdot-extrafullydisagree {
+    width:8vw;
+    height:8vw;
+    padding:10px;
+  }
+
+  button.btn-primary-custom{
+    height: 5rem;
+    width: 90%;
+    border: 1rem solid var(--quint);
+    border-radius: 1rem;
+    background-color: VAR(--quint);
+    color:white;
+    font-weight: bold;
+    vertical-align: middle;
+    text-decoration: none;
+    transition: 1s;
+    background-color:#ad4244;
+    border-color:#ad4244;
+  }
+  button.btn-primary-custom:hover {
+    transform:scale(1.2);
+  }
+  a.custom-card-link {
+    width:100%;
+  }
