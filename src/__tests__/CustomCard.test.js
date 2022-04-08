@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import CustomCard from '../components/CustomCard';
+import CustomCardEnd from '../components/CustomCardEnd';
 import Carousel from '../components/Carousel';
+import { data } from '../data/data';
 
 test('renders question card', () => {
   render(<CustomCard question = "random question" ></CustomCard>);
@@ -16,7 +18,7 @@ test('renders assessment-end card', () => {
 
   
 test('renders the carousel component that questions are held on', () => {
-    render(<Carousel>Cards go here</Carousel>);
+    render(<Carousel cards= {data}>Cards go here</Carousel>);
     const linkElement = screen.getByText(/Cards go here/);
     expect(linkElement).toBeInTheDocument();
 });

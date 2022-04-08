@@ -5,7 +5,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import TestPage from './components/TestPage' 
 import AboutPage from './components/AboutPage'
-import { BrowserRouter as Router,Routes as Switch,Route,Link} from "react-router-dom";
+import { BrowserRouter as Router, Routes as Switch,Route,Link} from "react-router-dom";
 function App() {
 
   return (

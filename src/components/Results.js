@@ -25,7 +25,7 @@ function Results ({assessmentState}) {
                 <div className = 'd-flex flex-row justify-content-center m-5 results-box'>
                         <div className = "custom-col-flex align-items-center">
                             <div className = 'lesser-lead'>Your best fit major is:</div>
-                            <div className = 'results-header'>Computer Swag Engineering</div> {/*This is where we would place our JS variable for major*/}
+                                <div className = 'results-header'>{test_results.MAX}</div> {/*This is where we would place our JS variable for major*/}
                             <img className = 'results-image' src = 'https://i.imgur.com/d1NHftJ.jpeg' width = "300vw" height = "300vw"></img>
                         </div>
                         <div className = "custom-col-flex">
@@ -48,11 +48,16 @@ function Results ({assessmentState}) {
                         </div>
                 </div>
                 <div className = 'd-flex flex-column justify-content-center m-5 results-box'>
-                    <div className = "d-flex flex-row justify-content-center cat-values">Neuroticism: {test_results.N}</div>
-                    <div className = "d-flex flex-row justify-content-center cat-values">Extraversion: {test_results.E}</div>
-                    <div className = "d-flex flex-row justify-content-center cat-values">Openness: {test_results.O}</div>
-                    <div className = "d-flex flex-row justify-content-center cat-values">Agreeableness: {test_results.A}</div>
-                    <div className = "d-flex flex-row justify-content-center cat-values">Conscientousness: {test_results.C}</div>
+                    <div className = "d-flex flex-row justify-content-center cat-values">Psychology: {test_results.Psy}</div>
+                    <div className = "d-flex flex-row justify-content-center cat-values">Arts: {test_results.Art}</div>
+                    <div className = "d-flex flex-row justify-content-center cat-values">Humanities: {test_results.Hum}</div>
+                    <div className = "d-flex flex-row justify-content-center cat-values">Engineering: {test_results.Eng}</div>
+                    <div className = "d-flex flex-row justify-content-center cat-values">Law: {test_results.Law}</div>
+                    <div className = "d-flex flex-row justify-content-center cat-values">Science: {test_results.Sci}</div>
+                    <div className = "d-flex flex-row justify-content-center cat-values">Economics: {test_results.Eco}</div>
+                    <div className = "d-flex flex-row justify-content-center cat-values">Business: {test_results.Bus}</div>
+                    <div className = "d-flex flex-row justify-content-center cat-values">Poli. Sci: {test_results.Pol}</div>
+                    <div className = "d-flex flex-row justify-content-center cat-values">Medicine: {test_results.Med}</div>
                 </div>
         </div>
     );
