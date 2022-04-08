@@ -1,3 +1,9 @@
+
+
+/**
+ * @note Old assessment code kept here in the case of a rollback being needed or something idk
+ */
+
 import {data} from "./data.js";
 export class Assessment {
     constructor()
@@ -10,7 +16,6 @@ export class Assessment {
         this.Hum = (this.prevAssessment ? new Map(Object.entries(this.prevAssessment.Hum)) : new Map()); // These statements refer to each of the 5 personality trait categories. If a previous session existed prior to page reload,
         this.Eng = (this.prevAssessment ? new Map(Object.entries(this.prevAssessment.Eng)) : new Map()); // these are set to the values contained in the previous session. Otherwise, we set the values to 0 if there was no page session
         this.Law = (this.prevAssessment ? new Map(Object.entries(this.prevAssessment.Law)) : new Map()); // or the assessment was restarted
-        this.Eng = (this.prevAssessment ? new Map(Object.entries(this.prevAssessment.Eng)) : new Map());
         this.Sci = (this.prevAssessment ? new Map(Object.entries(this.prevAssessment.Sci)) : new Map());
         this.Eco = (this.prevAssessment ? new Map(Object.entries(this.prevAssessment.Eco)) : new Map());
         this.Bus = (this.prevAssessment ? new Map(Object.entries(this.prevAssessment.Bus)) : new Map());
@@ -47,7 +52,6 @@ export class Assessment {
             Hum: JSON.stringify(this.mapToObj(this.Hum)),
             Eng: JSON.stringify(this.mapToObj(this.Eng)),
             Law: JSON.stringify(this.mapToObj(this.Law)),
-            Eng: JSON.stringify(this.mapToObj(this.Eng)),
             Sci: JSON.stringify(this.mapToObj(this.Sci)),
             Eco: JSON.stringify(this.mapToObj(this.Eco)),
             Bus: JSON.stringify(this.mapToObj(this.Bus)),
@@ -73,7 +77,6 @@ export class Assessment {
         this.Hum = this.mapToObj(this.Hum);
         this.Eng = this.mapToObj(this.Eng);
         this.Law = this.mapToObj(this.Law);
-        this.Eng = this.mapToObj(this.Eng);
         this.Sci = this.mapToObj(this.Sci);
         this.Eco = this.mapToObj(this.Eco);
         this.Bus = this.mapToObj(this.Bus);
@@ -85,7 +88,6 @@ export class Assessment {
         this.Hum = new Map(Object.entries(this.Hum));
         this.Eng = new Map(Object.entries(this.Eng));
         this.Law = new Map(Object.entries(this.Law));
-        this.Eng = new Map(Object.entries(this.Eng));
         this.Sci = new Map(Object.entries(this.Sci));
         this.Eco = new Map(Object.entries(this.Eco));
         this.Bus = new Map(Object.entries(this.Bus));
@@ -96,19 +98,53 @@ export class Assessment {
     set = (category, value, index) => {
         switch(category) {
             case 'N':
-                (this.N).set((index), (value)); 
+                (this.Psy).set((index), (value));
+                (this.Art).set((index), (value)); 
+                (this.Hum).set((index), (value)); 
+                (this.Eng).set((index), (-1 * value));
+                (this.Law).set((index), (-1 * value));
+                (this.Sci).set((index), (-1 * value));
                 break;
             case 'E': 
-                (this.E).set((index), (value));
+                (this.Eco).set((index), (value));
+                (this.Law).set((index), (value));
+                (this.Pol).set((index), (value));
+                (this.Med).set((index), (value));
+                (this.Art).set((index), (-1 * value));
+                (this.Hum).set((index), (-1 * value));
+                (this.Sci).set((index), (-1 * value));
                 break;
             case 'O':
-                (this.O).set((index), (value));
+                (this.Hum).set((index), (value));
+                (this.Art).set((index), (value));
+                (this.Psy).set((index), (value));
+                (this.Pol).set((index), (value));
+                (this.Eco).set((index), (-1 * value));
+                (this.Eng).set((index), (-1 * value));
+                (this.Law).set((index), (-1 * value));
+                (this.Sci).set((index), (-1 * value));
                 break;
             case 'A':
-                (this.A).set((index), (value));
+                (this.Med).set((index), (value));
+                (this.Psy).set((index), (value));
+                (this.Art).set((index), (value));
+                (this.Hum).set((index), (value));
+                (this.Sci).set((index), (value));
+
+                (this.Law).set((index), (-1 * value));
+                (this.Bus).set((index), (-1 * value));
+                (this.Eco).set((index), (-1 * value));
                 break;    
             case 'C':
-                (this.C).set((index), (value));
+                (this.Sci).set((index), (value));
+                (this.Law).set((index), (value));
+                (this.Eco).set((index), (value));
+                (this.Eng).set((index), (value));
+                (this.Med).set((index), (value));
+                (this.Psy).set((index), (value));
+                
+                (this.Art).set((index), (-1 * value));
+                (this.Hum).set((index), (-1 * value));
                 break;   
             default:
                 throw 'Input was invalid!';
@@ -134,20 +170,26 @@ export class Assessment {
             Pol: 0,
             Med: 0
         };
-        (this.N).forEach((value) => {
-            resultsObj.N += value
+        (this.Psy).forEach((value) => {
+            resultsObj.Psy += value
         });
-        (this.E).forEach((value) => {
-            resultsObj.E += value
+        (this.Art).forEach((value) => {
+            resultsObj.Art += value
         });
-        (this.O).forEach((value) => {
-            resultsObj.O += value
+        (this.Hum).forEach((value) => {
+            resultsObj.Hum += value
         });
-        (this.A).forEach((value) => {
-            resultsObj.A += value
+        (this.Eng).forEach((value) => {
+            resultsObj.Eng += value
         });
-        (this.C).forEach((value) => {
-            resultsObj.C += value
+        (this.Law).forEach((value) => {
+            resultsObj.Law += value
+        });
+        (this.Eng).forEach((value) => {
+            resultsObj.Eng += value
+        });
+        (this.Law).forEach((value) => {
+            resultsObj.Law += value
         });
         return resultsObj;
     }
