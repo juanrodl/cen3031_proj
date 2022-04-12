@@ -1,0 +1,45 @@
+:root {
+    --primary: #E69597;
+    --secondary: #CDD5D1;
+    --tertiary:#FF7477;
+    --quaternary: #9CF6F6;
+    --quint: #0D3B66;
+    --sext: #B5D6D6;
+    --sept: #ad4244;
+  }
+  
+
+.modal-dialog {
+    top: 6vh !important;
+}
+
+.modal-content {
+    color:white;
+    background-color: black;
+}
+
+.btn-modal-submit {
+    background-color: var(--quint);
+    color:white;
+    border: none;
+    border-radius: 10px;
+    transition: 1s;
+}
+.btn-modal-submit:hover {
+    color:white;
+    transform: scale(1.1);
+}
+.btn-modal-register {
+    background-color:transparent;
+    color:white;
+    border: none;
+    text-decoration: underline;
+    margin:0;
+    transition:1s;
+}
+.btn-modal-register:hover {
+    color: var(--quaternary);
+}
+#login-modal .modal-dialog .modal-content {
+    background-color:var(--quint);
+}
