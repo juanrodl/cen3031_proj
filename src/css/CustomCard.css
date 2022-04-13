@@ -104,3 +104,79 @@
   a.custom-card-link {
     width:100%;
   }
+
+  .custom-slider {
+    width:80%;
+    height:1.5vh;
+    -webkit-appearance:none;
+    appearance:none;
+    border-radius: 10px;
+    background-color:var(--primary);
+    transition: 1s;
+  }
+  .custom-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+  }
+  .custom-slider::-webkit-slider-thumb:active {
+    background-color:#db2529;
+  }
+  .custom-slider::-webkit-slider-thumb {
+    -webkit-appearance:none;
+    appearance:none;
+    width:5vh;
+    height:5vh;
+    background-color: var(--sept);
+    border-radius: 50px;
+    border: px solid;
+    cursor: pointer;
+    transition:1s;
+  }
+  .coolSlider {
+    padding-top: 4vh;
+    padding-bottom: 4vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+  .question-range {
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+    width:100%;
+    color: var();
+  }
+  .range-min-label{
+    font-size: 3vh;
+    font-weight: bold;
+  }
+  .range-max-label {
+    font-size: 3vh;
+    font-weight:bold;
+  }
+  .slider-container {
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+  }
+  .display-3-custom {
+    font-weight: bold;
+  }
+  .lock-answer-range {
+    align-self: center;
+    width:50%;
+    height: 10vh;
+    font-weight: lighter;
+    font-size: clamp(2vh, 2vw, 2vw); 
+    background-color: transparent;
+    border: 0.4vw solid var(--sept);
+    border-radius: 40px;
+    color: white;
+    background-color: var(--sept);
+    transition: 1s;
+  }
+  .lock-answer-range:hover {
+    transform: scale(1.1);
+  }
+  .lock-answer-range:disabled {
+    background-color: grey;
+    border-color: grey;
+  }

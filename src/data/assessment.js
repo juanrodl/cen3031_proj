@@ -1,3 +1,4 @@
+import { toStatePaths } from "xstate/lib/utils";
 import {data} from "./data.js";
 /**
  * @Class
@@ -32,7 +33,8 @@ export class Assessment {
 
         this.currIndex = (this.prevAssessment ? this.prevAssessment.currIndex : 0); //currIndex keeps track of the user's current question during the test session
 
-        this.cardStates = (this.prevAssessment ? this.prevAssessment.cardStates : new Array(data.length).fill(7)); //Pretty sure {data} is an array of objects, so .length works fine
+        this.cardStates = (this.prevAssessment ? this.prevAssessment.cardStates : new Array(data.length).fill(-1)); //Pretty sure {data} is an array of objects, so .length works fine
+        this.FA = -1;
     };
     
     /**
@@ -50,8 +52,13 @@ export class Assessment {
             catch(err) {console.log(err)}
         } //They tell me stop eval-maxxing but I dont want to https://i.imgur.com/VIZwvjv.png
         else if (q_type == 2);
-         //Do something else for slider. like if (value) > 70,000 (if debt is greater than 70,000) doSomething();
-        else;
+        {
+            if (category == 'FinancialAid')
+            {
+                this.FA = value;
+            }
+        }//Do something else for slider. like if (value) > 70,000 (if debt is greater than 70,000) doSomething();
+
     };
     /**
      * Converts a map to an object
@@ -65,6 +72,10 @@ export class Assessment {
           return obj;
         }, {});
     };
+
+    getFinancialAid = () =>{
+        return this.FA;
+    }
 /**
  * Is meant to override the stringify method.
  * @returns {string} literally does not work

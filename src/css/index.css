@@ -62,6 +62,18 @@ code {
     color:white;
 }
 
+.btn-profile-custom {
+  background-color: var(--tertiary);
+  color: white;
+  border-radius:15%;
+  transition: 1s;
+  padding: 10px;
+}
+.btn-profile-custom:hover {
+  background-color: var(--sept);
+  transform: scale(1.2);
+  color: white;
+}
 .btn-link-custom {
   color:white;
   text-decoration: none;
@@ -108,21 +120,20 @@ a:hover {
   margin:0;
 }
 
-a.link-custom {
+p.link-custom {
   color:white;
   transition: 0.3s;
   text-decoration: underline;
 }
-a.link-custom:hover {
+p.link-custom:hover {
   color:blue;
 }
-.modal-dialog {
-  top: 6rem !important;
+
+#register-modal > .modal-dialog > .modal-content {
+  background-color: black;
 }
-  .modal-content {
-  background-color: var(--quint)
-}
+
 .transparent-input {
   background-color: transparent;
-  color: white;
+  color:white;
 }
