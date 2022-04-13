@@ -8,7 +8,7 @@ import { Assessment } from '../data/assessment';
 import "../css/TestPage.css";
 
 function TestPage () {
-    const [currIndex, setCurrIndex] = useState(0)
+    const [currIndex, setCurrIndex] = useState(1)
     const location = useLocation();
     const increment = () => {
         if (currIndex < assess.cardStates.length-1)
@@ -17,7 +17,7 @@ function TestPage () {
         }
     }
     const decrement = () => {
-        if (currIndex > 0)
+        if (currIndex > 1)
         {
             setCurrIndex(currIndex-1);
         }
