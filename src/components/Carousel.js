@@ -50,7 +50,7 @@ const Carousel = ({cards, assessmentState, currIndex, increment, decrement}) => 
                             : index === current && question.type === 1 ? (<CustomCard assessmentState = {assessmentState} question = {question.question} supports = {question.supports} cat = {question.cat} index = {index} stateChanger1 = {updateAssessment}></CustomCard>)
                             : index === current && question.type === 2 ? (<CustomCardSlider assessmentState = {assessmentState} question = {question.question} supports = {question.supports} cat = {question.cat} min_val = {question.min_val} max_val = {question.max_val} stateChanger1 = {updateAssessment}></CustomCardSlider>)
                             : index === current && question.type === 3 ? <h1>This should be a yes/no card</h1>
-                            : console.log("Something went wrong")
+                            : <h1></h1>
                             }
                         </div>
                             )
