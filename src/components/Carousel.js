@@ -6,7 +6,7 @@ import CustomCard from './CustomCard';
 import '../css/Carousel.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import * as Icons from '@fortawesome/free-solid-svg-icons'
-const Carousel = ({cards, assessmentState}) => {
+const Carousel = ({cards, assessmentState, currIndex, increment, decrement}) => {
     const [current, setCurrent] = useState(0)
     const length = cards.length;
     const placeHolderFunction = () => {
@@ -14,6 +14,8 @@ const Carousel = ({cards, assessmentState}) => {
     }
     const nextSlide = () => {
         setCurrent(current === length-1 ? current : current + 1);
+        currIndex = current;
+        console.log(current);
     };
 
     const prevSlide = () => {
@@ -36,7 +38,7 @@ const Carousel = ({cards, assessmentState}) => {
         <div className='container-fluid d-flex flex-column justify-content-center'>
             <div className='Carousel'>
                 <div className = "col-xs-2 align-content-center justify-content-center" onClick = {prevSlide}>
-                <FontAwesomeIcon className = "carousel-chevron" icon={Icons.faChevronLeft}/>
+                <FontAwesomeIcon onClick={decrement} className = "carousel-chevron" icon={Icons.faChevronLeft}/>
                 </div>
                 {cards.map((question, index) => {
                     return ( 
@@ -52,7 +54,7 @@ const Carousel = ({cards, assessmentState}) => {
                         }
                     )}
                 <div className = "col-xs-2 align-content-center justify-content-center" onClick = {nextSlide}>
-                <FontAwesomeIcon className = "carousel-chevron" icon={Icons.faChevronRight}/>
+                <FontAwesomeIcon onClick={increment} className = "carousel-chevron" icon={Icons.faChevronRight}/>
                 </div>     
             </div>
         </div>
