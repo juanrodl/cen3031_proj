@@ -6,6 +6,9 @@ import CustomCard from './CustomCard';
 import '../css/Carousel.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import * as Icons from '@fortawesome/free-solid-svg-icons'
+import CustomCardSlider from './CustomCardSlider';
+import { update } from 'xstate/lib/actionTypes';
+
 const Carousel = ({cards, assessmentState, currIndex, increment, decrement}) => {
     const [current, setCurrent] = useState(0)
     const length = cards.length;
@@ -45,9 +48,9 @@ const Carousel = ({cards, assessmentState, currIndex, increment, decrement}) => 
                         <div className = {index === current ? 'cardc active' : 'cardc'} key={index}>
                             {index === current && question.type === -1 ? <CustomCardEnd question = {"Would you like to submit your answers?"} stateChanger1 = {placeHolderFunction}></CustomCardEnd>
                             : index === current && question.type === 1 ? (<CustomCard assessmentState = {assessmentState} question = {question.question} supports = {question.supports} cat = {question.cat} index = {index} stateChanger1 = {updateAssessment}></CustomCard>)
-                            : index === current && question.type === 2 ? <h1>This should be a slider card</h1>
+                            : index === current && question.type === 2 ? (<CustomCardSlider assessmentState = {assessmentState} question = {question.question} supports = {question.supports} cat = {question.cat} min_val = {question.min_val} max_val = {question.max_val} stateChanger1 = {updateAssessment}></CustomCardSlider>)
                             : index === current && question.type === 3 ? <h1>This should be a yes/no card</h1>
-                            : false && <h1></h1>
+                            : console.log("Something went wrong")
                             }
                         </div>
                             )

@@ -18,19 +18,19 @@ function Header () {
                     <ul className="navbar-nav align-items-center float-right">
                       
                       <li className="nav-item">
-                        <a className="nav-link nav-link-custom" href="#">
+                        <p className="nav-link nav-link-custom">
                         <Link to='/about' className = "nav-link-custom">About</Link>
-                        </a>
+                        </p>
                       </li>
                       <li className="nav-item">
-                        <a className="nav-link nav-link-custom" href="#">
+                        <p className="nav-link nav-link-custom" >
                         <Link to='/test' className = "nav-link-custom">Take Assessment</Link>
-                        </a>
+                        </p>
                       </li>
                       <li className="nav-item">
-                          <a className="nav-link" href="#">
+                          <p className="nav-link" href="#">
                           <button className= "btn btn-profile-custom" data-toggle= "modal" data-target = "#login-modal"><FontAwesomeIcon icon={faUser} /></button>
-                          </a>
+                          </p>
                       </li>
                     </ul>
               </div>

@@ -120,7 +120,15 @@ export const data = [
         type: 1
     },
     {
-        filler: "I see myself as someone who is epic",
+        question: "How much financial aid do you expect to receive?",
+        cat: 'FinancialAid',
+        min_val: 0,
+        max_val: 100000,
+        type: 2,
+        supports:1
+    },
+    {
+        filler: "This marks the end of the assessment",
         type:-1
     }
 ]

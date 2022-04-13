@@ -1,12 +1,33 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import '../css/LoginModal.css'
 import RegisterModal from './RegisterModal';
+import {validateEmail, validatePassword} from '../data/regExTest';
 function LoginModal () {
 
-    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
-    
+    const handleLogin = (e) => {
+        e.preventDefault();
+        let passwordPassed = validatePassword(password);
+        let emailPassed = validateEmail(email);
+        passwordPassed && true ? console.log("Password met requirements!") : console.log("Password did not meet requirements!");
+        emailPassed && true ? console.log("Email met requirements!") : console.log("Email did not meet requirements!");
+    }
+    useEffect(()=> {
+        document.getElementById("login-modal").addEventListener('click', (e) => {
+        if (e.target.classList.contains("modal") == true)
+        {
+            document.getElementById("password-incorrect-indicator-login").innerHTML = "";
+            document.getElementById("email-incorrect-indicator-login").innerHTML = "";
+            setEmail("");
+            setPassword("");
+            document.getElementById("password-input-login").value = "";
+            document.getElementById("email-input-login").value = "";
+        }
+    });
+});
+
     return (
         <div className='LoginModal'>
             <div className="modal fade" id="login-modal" tabIndex="-1">
@@ -16,15 +37,17 @@ function LoginModal () {
                         <div className="modal-title modal-title-custom">Log in</div>
                     </div>
                     <div className="modal-body modal-body-custom">
-                        <form>
+                        <form onSubmit={(e) => handleLogin(e)} >
                             <div className="form-group d-flex flex-column justify-content-start">
+                                <label id="email-incorrect-indicator-login" htmlFor="email-input-register"></label>
+                                <label id="password-incorrect-indicator-login" htmlFor='password-input-register'></label>
                                 <label htmlFor="email-input" className="form-label d-flex justify-content-start">Email Address</label>
-                                <input type="email" className="form-control transparent-input" id="email-input" onChange={(e) => setUsername(e.target.value)} required="" value={username}/>
+                                <input type="email" className="form-control transparent-input" id="email-input-login" onChange={(e) => setEmail(e.target.value)} required="" value={email}/>
                                 <div id="emailExtra" className="form-text">We will never share your personal information with anyone else</div>
                             </div>
                             <div className="form-group d-flex flex-column justify-content-start">
                                 <label htmlFor="password-input" className="form-label d-flex justify-content-start">Password</label>
-                                <input type="password" className="form-control transparent-input" id="password-input" onChange={(e) => setPassword(e.target.value)} required="" value={password}/>
+                                <input type="password" className="form-control transparent-input" id="password-input-login" onChange={(e) => setPassword(e.target.value)} required="" value={password}/>
                                 <label className = "form-label">Don't have an account? <button className = "btn-modal-register" type="button" data-dismiss="modal" data-toggle="modal" data-target="#register-modal">Register here!</button></label>
                             </div><button type="submit" className="btn btn-modal-submit">Submit</button>
                         </form>

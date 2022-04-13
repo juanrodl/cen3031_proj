@@ -7,7 +7,7 @@ const CustomCard = (props) => {
     useEffect( () => { //Very complicated-looking line that just sets the checkmark on whatever dot the user clicked, removes it from all other dots
         const elements = (document.getElementsByName("check"));
         let index = props.assessmentState.getCardState(props.index);
-        if (index < 7)
+        if (index < 7 && index > -1)
             {
                 elements.item(index).classList.add('bigdot-checked');
             }

@@ -1,5 +1,6 @@
 import React from 'react'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+import DevPage from './components/DevPage';
 import HomeContent from './components/HomeContent';
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -22,6 +23,7 @@ function App() {
               <Route path = "/about" element={<AboutPage></AboutPage>}/>
               <Route path ="/" element={<HomeContent></HomeContent>}/>
               <Route path ="/home" element={<HomeContent></HomeContent>}/>
+              <Route path ="/devtest" element={<DevPage></DevPage>}/>
             </Switch>
           </Router>
         </AuthStateContext.Provider>
