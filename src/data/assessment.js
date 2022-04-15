@@ -34,7 +34,12 @@ export class Assessment {
         this.currIndex = (this.prevAssessment ? this.prevAssessment.currIndex : 0); //currIndex keeps track of the user's current question during the test session
 
         this.cardStates = (this.prevAssessment ? this.prevAssessment.cardStates : new Array(data.length).fill(-1)); //Pretty sure {data} is an array of objects, so .length works fine
+        //Default values for all financial questions is =1, feel free to change to anything like NaN or null. Whatever suits you best :)
         this.FA = this.prevAssessment ? this.prevAssessment.FA : -1;
+        this.PA = this.prevAssessment ? this.prevAssessment.PA : -1;
+        this.SCH = this.prevAssessment ? this.prevAssessment.SCH : -1;
+        this.L = this.prevAssessment ? this.prevAssessment.L : -1;
+        this.S = this.prevAssessment ? this.prevAssessment.S : -1;
     };
     
     /**
@@ -53,9 +58,22 @@ export class Assessment {
         } //They tell me stop eval-maxxing but I dont want to https://i.imgur.com/VIZwvjv.png
         else if (q_type == 2);
         {
-            if (category == 'FinancialAid')
-            {
-                this.FA = value;
+            switch (category) {
+                case 'FinancialAid':
+                    this.FA = value;
+                    break;
+                case 'ParentalAid':
+                    this.PA = value;
+                    break;
+                case 'Scholarships':
+                    this.SCH = value;
+                    break;
+                case 'Loan':
+                    this.L = value;
+                    break;  
+                case 'Salary':
+                    this.S = value;
+                    break;
             }
         }//Do something else for slider. like if (value) > 70,000 (if debt is greater than 70,000) doSomething();
 
@@ -72,9 +90,28 @@ export class Assessment {
           return obj;
         }, {});
     };
-
-    getFinancialAid = () =>{
-        return this.FA;
+    /**
+     * 
+     * 
+     */
+    getFinancials = (aidType) =>{
+        switch (aidType) {
+            case 'FinancialAid':
+                return this.FA;
+                break;
+            case 'ParentalAid':
+                return this.PA;
+                break;
+            case 'Scholarships':
+                return this.SCH;
+                break;
+            case 'Loan':
+                return this.L
+                break;  
+            case 'Salary':
+                return this.S;
+                break;
+        }
     }
 /**
  * Is meant to override the stringify method.

@@ -5,7 +5,7 @@ import { Assessment } from '../data/assessment';
 
 const CustomCardSlider = (props) => {
     
-    let FA = props.assessmentState.getFinancialAid();
+    let FA = props.assessmentState.getFinancials(props.cat);
     let max_val = props.max_val && props.max_val ? props.max_val: 100000;
     let min_val = props.min_val && props.min_val ? props.min_val: 0;
     let question = props.question && props.question ? props.question: "How much MONEY do you need BRO";

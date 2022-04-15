@@ -128,6 +128,38 @@ export const data = [
         supports:1
     },
     {
+        question: "How much parental aid do you expect to receive?",
+        cat: 'ParentalAid',
+        min_val: 0,
+        max_val: 100000,
+        type: 2,
+        supports:1
+    },
+    {
+        question: "How much assistance will you receive from scholarships?",
+        cat: 'Scholarships',
+        min_val: 0,
+        max_val: 100000,
+        type: 2,
+        supports:1
+    },
+    {
+        question: "If you were to apply for a loan, how much would you expect to have left over after you graduate?",
+        cat: 'Loan',
+        min_val: 0,
+        max_val: 100000,
+        type: 2,
+        supports:0
+    },
+    {
+        question: "How much do you expect yearly after graduation?",
+        cat: 'Salary',
+        min_val: 0,
+        max_val: 100000,
+        type: 2,
+        supports:1
+    },
+    {
         filler: "This marks the end of the assessment",
         type:-1
     }
