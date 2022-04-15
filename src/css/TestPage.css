@@ -13,3 +13,10 @@
     opacity: 0;
     transition: opacity 500ms ease-out;
 }
+
+.questionCounter {
+    font-size: 2rem;
+    font-family:'Lexend', sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+}

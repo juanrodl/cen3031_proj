@@ -3,7 +3,10 @@
   "version": "0.2.0",
   "private": true,
   "dependencies": {
-    "jest-watch-typeahead": "^0.6.5"
+    "@xstate/react": "^3.0.0",
+    "jest-watch-typeahead": "^0.6.5",
+    "jquery": "^3.6.0",
+    "xstate": "^4.31.0"
   },
   "scripts": {
     "start": "react-scripts start",
