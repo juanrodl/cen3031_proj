@@ -15,7 +15,7 @@ const CustomCardSlider = (props) => {
         submit_button = document.getElementsByClassName('lock-answer-range')[0]
         if (submit_button.disabled == false)
         {
-            props.stateChanger1(props.cat, '2', value, props.index, value);
+            props.stateChanger1(props.cat, '2', roundThousands(value), props.index, value);
             submit_button.setAttribute('disabled', '');
             submit_button.innerHTML = "Submitted!"
         }

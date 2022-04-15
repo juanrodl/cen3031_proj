@@ -34,7 +34,7 @@ export class Assessment {
         this.currIndex = (this.prevAssessment ? this.prevAssessment.currIndex : 0); //currIndex keeps track of the user's current question during the test session
 
         this.cardStates = (this.prevAssessment ? this.prevAssessment.cardStates : new Array(data.length).fill(-1)); //Pretty sure {data} is an array of objects, so .length works fine
-        this.FA = -1;
+        this.FA = this.prevAssessment ? this.prevAssessment.FA : -1;
     };
     
     /**
