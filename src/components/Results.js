@@ -3,6 +3,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import * as Icons from '@fortawesome/free-solid-svg-icons'
 import "../css/Results.css";
 function Results ({assessmentState}) {
+    assessmentState.getTotalFinancials();
     const test_results = assessmentState.getTotalPoints();
     assessmentState = assessmentState.assessmentErase();
     useEffect(() => {
