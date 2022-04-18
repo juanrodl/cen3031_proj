@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Results from './Results';
 import Carousel from './Carousel';
 import { data } from '../data/data'
@@ -9,6 +9,7 @@ import "../css/TestPage.css";
 
 function TestPage () {
     const [currIndex, setCurrIndex] = useState(1)
+    const [componentDidMount, setComponentDidMount] = useState(false);
     const location = useLocation();
     const increment = () => {
         if (currIndex < assess.cardStates.length-1)
@@ -23,6 +24,15 @@ function TestPage () {
         }
         
     }
+    useEffect(()=> {
+        //If page is refreshed, component remounted, we set the counter to 0
+        if (componentDidMount === false)
+        {
+            setCurrIndex(1);
+            setComponentDidMount(true);
+        }
+        
+    });
     var assess = new Assessment();
     console.log(assess);
     return (
@@ -34,7 +44,7 @@ function TestPage () {
                     </div>
                     <Switch location = {location}> 
                         <Route path = "results" element={<Results assessmentState={assess}></Results>} />
-                        <Route path = "" element={<Carousel cards={data} assessmentState={assess} currIndex = {currIndex} increment = {increment} decrement = {decrement}></Carousel>} />
+                        <Route path = "" element={<Carousel cards={data} assessmentState={assess} currIndex = {currIndex} increment = {increment} decrement = {decrement} setQNum = {setCurrIndex}></Carousel>} />
                     </Switch>
                 </div>
             </CSSTransition>

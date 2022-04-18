@@ -9,7 +9,7 @@ import * as Icons from '@fortawesome/free-solid-svg-icons'
 import CustomCardSlider from './CustomCardSlider';
 import { update } from 'xstate/lib/actionTypes';
 
-const Carousel = ({cards, assessmentState, currIndex, increment, decrement}) => {
+const Carousel = ({cards, assessmentState, currIndex, increment, decrement, setQNum}) => {
     const [current, setCurrent] = useState(0)
     const length = cards.length;
     const placeHolderFunction = () => {
@@ -24,6 +24,10 @@ const Carousel = ({cards, assessmentState, currIndex, increment, decrement}) => 
     const prevSlide = () => {
         setCurrent(current === 0 ? current : current -1);
     };
+    useEffect(() =>
+    {
+        console.log("Balls");
+    })
     
     //Here, I'll have all of the functions related to the assessment handling.
     //gonna create a javadoc for this one cuz this one HELLA complicated oh my lawd

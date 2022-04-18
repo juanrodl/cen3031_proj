@@ -7,15 +7,15 @@ import Footer from './components/Footer'
 import TestPage from './components/TestPage' 
 import AboutPage from './components/AboutPage'
 import {AuthStateContext, simpleMachine} from './data/authState.xStateMachine';
-import {useMachine} from '@xstate/react';
+import {useMachine, useInterpret} from '@xstate/react';
 import { BrowserRouter as Router, Routes as Switch,Route,Link} from "react-router-dom";
 function App() {
 
   const [state, send] = useMachine(simpleMachine);
 
   return (
-      <div className="App">
-        <AuthStateContext.Provider value={{ handleLogin: () => {send({type: "LOG_IN"});}}}>
+      <div className="Applet">
+        <AuthStateContext.Provider value={{send}}>
           <Router>
             <Header></Header>
             <Switch>
@@ -26,7 +26,7 @@ function App() {
               <Route path ="/devtest" element={<DevPage></DevPage>}/>
             </Switch>
           </Router>
-        </AuthStateContext.Provider>
+          </AuthStateContext.Provider>
       </div>  
   );
 }

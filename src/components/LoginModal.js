@@ -1,18 +1,45 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import '../css/LoginModal.css'
+import {useNavigate} from "react-router-dom";
 import RegisterModal from './RegisterModal';
+import {AuthStateContext, simpleMachine} from '../data/authState.xStateMachine';
 import {validateEmail, validatePassword} from '../data/regExTest';
+
 function LoginModal () {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const {send} = useContext(AuthStateContext);
+    const navigate = useNavigate();
 
+    const closeModals = () => {
+            // get modals
+            const modals = document.getElementsByClassName('modal');
+
+            // on every modal change state like in hidden modal
+            for(let i=0; i<modals.length; i++) {
+              modals[i].classList.remove('show');
+              modals[i].setAttribute('aria-hidden', 'true');
+              modals[i].setAttribute('style', 'display: none');
+            }
+        
+            // get modal backdrops
+            const modalsBackdrops = document.getElementsByClassName('modal-backdrop');
+    
+            // remove every modal backdrop
+            for(let i=0; i<modalsBackdrops.length; i++) {
+              document.body.removeChild(modalsBackdrops[i]);
+            }
+    }
     const handleLogin = (e) => {
         e.preventDefault();
         let passwordPassed = validatePassword(password);
         let emailPassed = validateEmail(email);
         passwordPassed && true ? console.log("Password met requirements!") : console.log("Password did not meet requirements!");
         emailPassed && true ? console.log("Email met requirements!") : console.log("Email did not meet requirements!");
+        send("LOG_IN");
+        closeModals();
+        navigate("/devtest");
     }
     useEffect(()=> {
         document.getElementById("login-modal").addEventListener('click', (e) => {

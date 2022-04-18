@@ -8,7 +8,8 @@ import LoginModal from './LoginModal';
 import "../css/Header.css";
 import MYMLogo from '../img/Meet_Your_Major-logos_white.png'
 function Header () {
-  
+
+
     return (
       <div>
         <nav className="navbar navbar-expand-sm bg-primary-custom navbar-secondary-custom">
