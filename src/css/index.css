@@ -21,16 +21,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--primary);
   color:var(--secondary);
+  max-height:auto;
 
+}
+html, body, #app, #app>div {
+  height: 100vh !important;
 }
 body>div#root {
   height:100vh;
-  overflow: hidden;
 }
 .App {
   display:flex;
   flex-flow:column;
-  height:100vh;
+  height:vh;
   width:100%;
 }
 
@@ -38,7 +41,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+nav {
+  max-height: 20vh !important;
+}
 .navbar-dark {
   color: ivory;
   font-size: 1rem;

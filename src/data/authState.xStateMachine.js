@@ -1,4 +1,4 @@
-import {Machine} from 'xstate';
+import {Machine, interpret} from 'xstate';
 import React, {createContext} from 'react';
 
   //Simple toggle for logged in and logged out, to be used later for front-end authentication usage.
@@ -42,6 +42,7 @@ import React, {createContext} from 'react';
     services: {
         checkLogIn: (context,event) => (callback, onReceive) => {
             //if the user is already logged in
+            
             const jwtFromStorage = null;
             if (jwtFromStorage)
             callback("JWT_NOT_EXPIRED");

@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import {validateEmail, validatePassword} from '../data/regExTest';
+import {useNavigate} from "react-router-dom";
 import '../css/RegisterModal.css';
 function RegisterModal () {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
+    const navigate = useNavigate();
     const handleRegister = (e) => {
         e.preventDefault();
         let passwordPassed = validatePassword(password);

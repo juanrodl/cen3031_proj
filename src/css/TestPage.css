@@ -15,8 +15,10 @@
 }
 
 .questionCounter {
+    display: flex;
     font-size: 2rem;
     font-family:'Lexend', sans-serif;
     font-weight: bold;
     margin-top: 20px;
+    justify-content:center;
 }

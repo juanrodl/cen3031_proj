@@ -1,0 +1,116 @@
+:root {
+    --primary: #E69597;
+    --secondary: #CDD5D1;
+    --tertiary:#FF7477;
+    --quaternary: #9CF6F6;
+    --quint: #0D3B66;
+    --sext: #B5D6D6;
+    --sept: #ad4244;
+  }
+
+  .UserProfile {
+      display: flex;
+      justify-content: center;
+      align-items:center;
+  }
+  .user-profile-wrapper {
+      margin-top: 30px;
+      border-radius: 25px;
+      border: solid 5px var(--sept);
+      width:80vw;
+      max-height: auto;
+      background-color: var(--tertiary);
+      
+  }
+  .user-profile-sidebar {
+      position:relative;
+      display:flex;
+      height:auto;
+      z-index: 1;
+      border-radius: 10px 0px 0px 10px;
+      border: solid 5px var(--sept);
+      justify-content: center;
+      background-color:#ad4244;
+      
+  }
+  .sidebar-list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      justify-content:start;
+      padding:0px;
+      width:100%;
+      font-size: 20px;
+  }
+  .sidebar-list > li {
+      margin-top:20px;
+      display: flex;
+      padding: 10px;
+      transition: 1s;
+      width: 100%;
+      border: 3px solid white;
+      border-radius:15px;
+  }
+  .sidebar-list > li:hover {
+    transform: scale(1.05);
+    cursor:pointer;
+  }
+  .profile-page-image {
+      border-radius: 15px;
+      max-width: 40vw;
+      max-height: inherit;
+  }
+  .UserTable {
+      overflow-x: none;
+      overflow-y: auto;
+      max-height:60vh;
+      padding: 10px;
+  }
+  .past-results-table {
+      font-size:1.6rem;
+      table-layout:fixed;
+      width:100%;
+      padding-bottom:10px;
+  }
+  .past-results-table > thead {
+      font-size:1.4rem;
+      background-color:var(--sept);
+  }
+  .past-results-table >tbody > tr:nth-child(even) {
+      background-color:var(--quint);
+  }
+  .past-results-table >tbody > tr:nth-child(odd) {
+    background-color:#2a497a;
+  }
+.AccountSettings {
+    color: white;
+    padding: 0px;
+}
+.settings-hr {
+    padding:0px;
+    border: 2px solid white;
+    opacity: 1;
+}
+.custom-form-group {
+    padding:1rem;
+}
+#change-email-input, #change-password-input {
+    margin-right: 2vw;
+}
+
+.settings-change-btn {
+    color:white;
+    background-color: var(--sept);
+    border: solid var(--sept);
+    border-radius: 5px;
+}
+
+.settings-change-field {
+    background-color:transparent;
+    border: solid var(--sept);
+    border-radius: 5px;
+    color:white;
+}
+.highlighted {
+    background-color:var(--quint);
+}
