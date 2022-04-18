@@ -113,6 +113,7 @@ export class Assessment {
                 break;
         }
     }
+    
 /**
  * Is meant to override the stringify method.
  * @returns {string} literally does not work
@@ -304,6 +305,41 @@ export class Assessment {
         }
     }
 
+    setIndv = (category, value, index) => {
+        switch(category) {
+            case 1 :
+                (this.Psy).set((index), (value));
+                break;
+            case 2 :
+                (this.Art).set((index), (value));
+                break;
+            case 3 :
+                (this.Hum).set((index), (value));
+                break;
+            case 4 :
+                (this.Eng).set((index), (value));
+                break;
+            case 5 :
+                (this.Law).set((index), (value));
+                break;
+            case 6 :
+                (this.Sci).set((index), (value));
+                break; 
+            case 7 :
+                (this.Eco).set((index), (value));
+                break;
+            case 8 :
+                (this.Bus).set((index), (value));
+                break;
+            case 9 :
+                (this.Pol).set((index), (value));
+                break;
+            case 10 :
+                (this.Med).set((index), (value));
+                break;
+        }
+    }
+
     /**
      * Returns a JavaScript Object with majors and their total points, and the name of the major that won
      * @returns {Object} an Object containing point values for each major, as well as the name of the major with the maximum amount
@@ -355,5 +391,87 @@ export class Assessment {
         });
         resultsObj.MAX = this.getMax(resultsObj);
         return resultsObj;
+    }
+
+    getTotalFinancials = () =>{ 
+        // i want to call this function when the assessment is submitted         
+        let total = 0         
+        total += this.getFinancials("FinancialAid");         
+        total += this.getFinancials("ParentalAid");         
+        total += this.getFinancials("Scholarships");         
+        total += this.getFinancials("Loan");         
+        total += this.getFinancials("Salary");       
+        if(total >= -20000 && total < 0){             
+            this.setIndv(1,-5,20); //Psy             
+            this.setIndv(2,15,21);             
+            this.setIndv(3,15,22);             
+            this.setIndv(4,10,23);             
+            this.setIndv(5,-5,24);//Law             
+            this.setIndv(6,15,25);             
+            this.setIndv(7,10,26);             
+            this.setIndv(8,-5,27);             
+            this.setIndv(9,10,28);             
+            this.setIndv(10,-5,29);         
+        }         
+        else if(total <= -20000 && total >= -70000){             
+            this.setIndv(1,-10,20); //Psy             
+            this.setIndv(2,10,21);             
+            this.setIndv(3,10,22);            
+            this.setIndv(4,5,23);            
+            this.setIndv(5,-10,24);//Law
+            this.setIndv(6,10,25);
+            this.setIndv(7,5,26);
+            this.setIndv(8,-10,27);
+            this.setIndv(9,5,28);
+            this.setIndv(10,-10,29);
+        }
+        else if(total < -70000){
+            this.setIndv(1,-15,20); //Psy
+            this.setIndv(2,5,21);
+            this.setIndv(3,5,22);
+            this.setIndv(4,0,23);
+            this.setIndv(5,-15,24);//Law
+            this.setIndv(6,5,25);
+            this.setIndv(7,0,26);
+            this.setIndv(8,-15,27);
+            this.setIndv(9,0,28);
+            this.setIndv(10,-15,29);
+        }
+        else if(total >= 0 && total <= 20000){
+            this.setIndv(1,5,20); //Psy
+            this.setIndv(2,-5,21);
+            this.setIndv(3,-5,22);
+            this.setIndv(4,0,23);
+            this.setIndv(5,5,24);//Law
+            this.setIndv(6,-5,25);
+            this.setIndv(7,0,26);
+            this.setIndv(8,5,27);
+            this.setIndv(9,0,28);
+            this.setIndv(10,5,29);
+        }
+        else if(total > 20000 && total <= 50000){
+            this.setIndv(1,10,20); //Psy
+            this.setIndv(2,0,21);
+            this.setIndv(3,0,22);
+            this.setIndv(4,5,23);
+            this.setIndv(5,10,24);//Law
+            this.setIndv(6,0,25);
+            this.setIndv(7,5,26);
+            this.setIndv(8,10,27);
+            this.setIndv(9,5,28);
+            this.setIndv(10,10,29);
+        }
+        else if(total > 50000){
+            this.setIndv(1,15,20); //Psy
+            this.setIndv(2,5,21);
+            this.setIndv(3,5,22);
+            this.setIndv(4,10,23);
+            this.setIndv(5,15,24);//Law
+            this.setIndv(6,5,25);
+            this.setIndv(7,10,26);
+            this.setIndv(8,15,27);
+            this.setIndv(9,10,28);
+            this.setIndv(10,15,29);
+        }
     }
 };
