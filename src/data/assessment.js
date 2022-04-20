@@ -1,6 +1,17 @@
 import { toStatePaths } from "xstate/lib/utils";
 import {data} from "./data.js";
-/**
+import BusinessPic from '../img/business.jpg'
+import ArtsPic from '../img/arts.jpg'
+import EconomicsPic from '../img/economics.jpg'
+import EnglishPic from '../img/english.jpg'
+import HumanitiesPic from '../img/humanities.jpg'
+import LawPic from '../img/law.jpg'
+import MedicinePic from '../img/medicine.jpg'
+import PoliPic from '../img/poliscience.png'
+import PsychologyPic from '../img/psychology.jpg'
+import SciencePic from '../img/science.jpg'
+import { sendTo } from "xstate/lib/actions";
+/*
  * @Class
  * Represents the assessment as seen from the front-end. Handles sessionstorage allocations as well as how
  * front-end components understand and keep track of the assessment.
@@ -390,6 +401,7 @@ export class Assessment {
             resultsObj.Med += value
         });
         resultsObj.MAX = this.getMax(resultsObj);
+        //console.log(resultsObj.MAX);
         return resultsObj;
     }
 
@@ -473,5 +485,82 @@ export class Assessment {
             this.setIndv(9,10,28);
             this.setIndv(10,15,29);
         }
+    }
+
+    getSortedMajors = () => {
+        let resultsObj = this.getTotalPoints();
+        let values = Object.values(resultsObj);
+        let keys = Object.keys(resultsObj);
+        let secondaryMajors = [];
+        let data = [
+            { name: 'Psychology', value: resultsObj.Psy },
+            { name: 'Arts', value: resultsObj.Art },
+            { name: 'Humanities', value: resultsObj.Hum },
+            { name: 'Engineering', value: resultsObj.Eng },
+            { name: 'Law', value: resultsObj.Law },
+            { name: 'Science', value: resultsObj.Sci },
+            { name: 'Economics', value: resultsObj.Eco },
+            { name: 'Business', value: resultsObj.Bus },
+            { name: 'Poli. Science', value: resultsObj.Pol },
+            { name: 'Medicine', value: resultsObj.Med }
+        ]
+
+        data.sort(this.customCompare).reverse();
+        //values.sort();
+        for (var i = 0; secondaryMajors.length <= 3; i++)
+        {
+            if (data.at(i).name !== resultsObj.MAX)
+            {
+                secondaryMajors.push(data.at(i).name);
+            }
+            else
+            {
+                console.log('was equal');
+                //i--;
+            }
+
+            //if (secondaryMajors.length == 3) break;
+        }
+        console.log(data);
+        console.log(secondaryMajors);
+        return secondaryMajors;
+    }
+
+    customCompare = (a,b) => {
+        return a.value - b.value;
+    }
+
+    getMajorRelatedPic = (resultsObj) => {
+        let relatedImages = {
+            Psy: PsychologyPic,
+            Art: ArtsPic,
+            Hum: HumanitiesPic,
+            Eng: EnglishPic,
+            Law: LawPic,
+            Sci: SciencePic,
+            Eco: EconomicsPic,
+            Bus: BusinessPic,
+            Pol: PoliPic,
+            Med: MedicinePic,
+            MAX: ''
+        };
+
+        //let resultsObj = this.getTotalPoints();
+        console.log(resultsObj);
+        let major = resultsObj.MAX;
+        //console.log(major);
+        if (major === "Psychology") { relatedImages.MAX = relatedImages.Psy; }
+        else if (major === "Arts") { relatedImages.MAX = relatedImages.Art; }
+        else if (major === "Humanity") { relatedImages.MAX = relatedImages.Hum; }
+        else if (major === "Engineering") { relatedImages.MAX = relatedImages.Eng; }
+        else if (major ==="Law") { relatedImages.MAX = relatedImages.Law; }
+        else if (major === "Science") { relatedImages.MAX = relatedImages.Sci; }
+        else if (major === "Economics") { relatedImages.MAX = relatedImages.Eco; }
+        else if (major === "Business") { relatedImages.MAX = relatedImages.Bus; }
+        else if (major === "Poli. Science") { relatedImages.MAX = relatedImages.Pol; }
+        else if (major === "Medicine") { relatedImages.MAX = relatedImages.Med; }
+        //else { relatedImages.MAX = relatedImages.Psy; }
+
+        return relatedImages;
     }
 };
