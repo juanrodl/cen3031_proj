@@ -12,9 +12,9 @@ urlpatterns = [
     # path('profile/', views.profile, name='profile'),
 
     # ex: /meetyourmajor/results/
-    path('results/', views.results_list, name='results'),
+    path('results/', views.ResultsList.as_view(), name='results'),
     # ex: /meetyourmajor/2/
-    path('results/<int:pk>/', views.result_detail, name='individual result')
+    path('results/<int:pk>/', views.SnippetDetail.as_view(), name='individual result')
     
 ]
 
