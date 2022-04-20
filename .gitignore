@@ -63,9 +63,6 @@ media
 # File-based project format
 *.iws
 
-# IntelliJ
-out/
-
 # JIRA plugin
 atlassian-ide-plugin.xml
 
