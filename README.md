@@ -1,13 +1,13 @@
 # MeetYourMajor
 ### Intro to Software Engineering project
-**Description**: MeetYourMajor is a simple, lightweight web application through which High School 
-and College Students alike can take a short assessment that determines their career or major of best-fit.
+**Description**: MeetYourMajor is a simple, lightweight web application through which high school 
+and college students alike can take a short assessment that determines their career or major of best-fit.
 This app intends to assist students who feel unsure of what major they should pursue during their time in college,
 by matching their personality, interests, skills, and financials to a small list of "ideal" majors.
 
-- **Tech Stack**: React-Bootstrap for the front-end, Django and *Insert Database Here* for the back-end. Main languages are HTML5, Javascript, and Python
+- **Tech Stack**: React-Bootstrap for the front-end, Django and SQLite for the back-end. Main languages are HTML5, Javascript, and Python
 - **Version**: Alpha
-- **Changelog**: Changes made can be foud on the [CHANGELOG](CHANGELOG.md).
+- **Changelog**: Changes made can be found on the [CHANGELOG](CHANGELOG.md).
 
 ## Dependencies
 In order to run this program, you will need NodeJS installed and set up on your device. Additionally, a number of packages should be installed
@@ -44,4 +44,4 @@ This is currently a private repository, but if any changes to contribution guide
 @juanrodl - Project Manager - UI and Front-End Developer
 @angel1254mc - Scrum Master - Front-end Developer
 @shehzad02 - Back-End Specialist - Database Manager
-@jesv99 - Engineering Manager - Developer -Product Design Lead
+@jesv99 - Engineering Manager - Developer - Product Design Lead
